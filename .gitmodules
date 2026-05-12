@@ -1,0 +1,3 @@
+[submodule "mlpm"]
+	path = mlpm
+	url = https://github.com/maciejchrabaszcz/latent-prototype-moderator

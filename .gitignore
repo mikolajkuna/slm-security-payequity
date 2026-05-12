@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+.env/
+.venv/
+venv/
+venv_mlpm/
+
+# HuggingFace cache
+*.arrow
+*.parquet
+datasets/
+*.cache
+
+# Model weights
+*.safetensors
+*.bin
+*.pt
+*.gguf
+
+# Hidden states (duze pliki binarne)
+wildguard_hidden_states/
+eval_datasets_hidden_states/
+
+# Results (commitowane selektywnie)
+results/
+!results/.gitkeep
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# uv / pip
+uv.lock
