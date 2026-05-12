@@ -12,8 +12,8 @@ import time
 from pathlib import Path
 
 # ── Config ────────────────────────────────────────────────────────────────────
-DATASET_PATH = "HR-PayEquity-Adv.jsonl"
-OUTPUT_PATH  = "HR-PayEquity-Adv_validated.jsonl"
+DATASET_PATH = "data/HR-PayEquity-Adv.jsonl"
+OUTPUT_PATH  = "data/HR-PayEquity-Adv_validated.jsonl"
 JUDGE_MODEL  = "gpt-4o"          # change to any model
 JUDGE_API_KEY   = os.getenv("JUDGE_API_KEY", "")
 JUDGE_BASE_URL  = os.getenv("JUDGE_BASE_URL", "https://api.openai.com/v1")
