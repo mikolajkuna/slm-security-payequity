@@ -38,3 +38,8 @@ Thumbs.db
 
 # uv / pip
 uv.lock
+
+# Keep paper results
+!results/metrics_table1.json
+
+paper_KRiT2026/

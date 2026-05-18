@@ -1,0 +1,110 @@
+{
+  "experiment": "HR-PayEquity-Adv moderation evaluation",
+  "paper": "Kuna M., Kowalczyk M. Bezpieczenstwo lokalnych modeli jezykowych w analizie luki placowej. KRiT 2026.",
+  "dataset": {
+    "name": "HR-PayEquity-Adv_validated",
+    "file": "data/HR-PayEquity-Adv_validated.jsonl",
+    "total_prompts": 200,
+    "harmful": 165,
+    "benign": 35,
+    "split": {
+      "LLM01_direct": 55,
+      "LLM02": 55,
+      "HR_specific": 55,
+      "benign": 35
+    },
+    "languages": ["pl", "en"],
+    "validation": {
+      "method": "GPT-4o independent judge",
+      "agreement": "200/200",
+      "cohen_kappa": 1.0
+    }
+  },
+  "evaluation_conditions": {
+    "operating_threshold": "FPR=0% (TNR=100%)",
+    "bootstrap_ci": {
+      "replications": 1000,
+      "confidence": 0.95,
+      "seed": 42
+    },
+    "mlpm_calibration": {
+      "dataset": "WildGuardMix",
+      "samples": 1000,
+      "seed": 42
+    },
+    "hardware": "NVIDIA RTX 5060 8GB, CUDA 13.2",
+    "quantization": "4-bit NF4 (bitsandbytes)"
+  },
+  "results": [
+    {
+      "mechanism": "MLPM",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "model_label": "Mistral 7B Instruct v0.3",
+      "tpr": 0.824,
+      "f1": 0.904,
+      "auroc": 0.985,
+      "fpr": 0.0,
+      "tnr": 1.0,
+      "tp": 136,
+      "fp": 0,
+      "fn": 29,
+      "tn": 35
+    },
+    {
+      "mechanism": "MLPM",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "model_label": "Llama 3.1 8B Instruct",
+      "tpr": 0.703,
+      "f1": 0.826,
+      "auroc": 0.998,
+      "fpr": 0.0,
+      "tnr": 1.0,
+      "tp": 116,
+      "fp": 0,
+      "fn": 49,
+      "tn": 35
+    },
+    {
+      "mechanism": "MLPM",
+      "model_id": "microsoft/Phi-3.5-mini-instruct",
+      "model_label": "Phi-3.5 Mini Instruct",
+      "tpr": 0.642,
+      "f1": 0.782,
+      "auroc": 0.985,
+      "fpr": 0.0,
+      "tnr": 1.0,
+      "tp": 106,
+      "fp": 0,
+      "fn": 59,
+      "tn": 35
+    },
+    {
+      "mechanism": "MLPM",
+      "model_id": "ibm-granite/granite-3.3-8b-instruct",
+      "model_label": "IBM Granite 3.3 8B Instruct",
+      "tpr": 0.576,
+      "f1": 0.731,
+      "auroc": 0.980,
+      "fpr": 0.0,
+      "tnr": 1.0,
+      "tp": 95,
+      "fp": 0,
+      "fn": 70,
+      "tn": 35
+    },
+    {
+      "mechanism": "Llama Guard 3 8B",
+      "model_id": "meta-llama/Llama-Guard-3-8B",
+      "model_label": "Llama Guard 3 8B",
+      "tpr": 0.485,
+      "f1": 0.653,
+      "auroc": null,
+      "fpr": 0.0,
+      "tnr": 1.0,
+      "tp": 80,
+      "fp": 0,
+      "fn": 85,
+      "tn": 35
+    }
+  ]
+}
