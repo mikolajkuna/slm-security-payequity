@@ -43,8 +43,6 @@ slm-security-payequity/
 │   ├── eval_mlpm.py                      # MLPM evaluation pipeline
 │   └── eval_llama_guard.py               # Llama Guard 3 8B evaluation pipeline
 ├── mlpm/                                 # git submodule: Chrabąszcz et al. (2025)
-├── paper_KRiT2026/
-│   └── paper3_KRiT2026.pdf              # submitted manuscript
 ├── results/
 │   └── metrics_table1.json              # Table 1 results (TPR, F1, AUROC)
 ├── LICENSE
@@ -120,12 +118,6 @@ pip install -r requirements.txt
 
 GPU with ≥ 8 GB VRAM required. Tested on NVIDIA RTX 5060 8 GB, CUDA 13.2. Models loaded with 4-bit NF4 quantization (bitsandbytes).
 
-For Llama Guard 3 8B, a HuggingFace access token with meta-llama access is required:
-```bash
-export HF_TOKEN=your_token   # Linux / macOS
-$env:HF_TOKEN="your_token"   # Windows PowerShell
-```
-
 ---
 
 ## Evaluation
@@ -133,7 +125,6 @@ $env:HF_TOKEN="your_token"   # Windows PowerShell
 ### 1. Label cross-validation
 
 ```bash
-export JUDGE_API_KEY=your_openai_key
 python evaluation/validate_labels.py
 ```
 
@@ -182,11 +173,3 @@ Results saved to `results/llama_guard_3_8b.json`.
   year={2026}
 }
 ```
-
----
-
-## Related Work
-
-- Paper 1 (PP-RAI 2026): [GAMBA](https://github.com/mikolajkuna/GAMBA) — Bayesian and frequentist GAM comparison for pay equity analysis
-- Paper 2 (FedCSIS 2026): [slm-payequity](https://github.com/mikolajkuna/slm-payequity) — SLM fine-tuning for pay equity compliance tasks
-- MLPM: [latent-prototype-moderator](https://github.com/maciejchrabaszcz/latent-prototype-moderator) — Chrabąszcz et al. (2025)
