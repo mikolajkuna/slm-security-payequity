@@ -1,4 +1,4 @@
-# SLM-Security-PayEquity – Security Framework for On-Premise SLMs in HR Pay Equity Compliance
+# SLM-Security-PayEquity
 
 **Security framework for on-premise Small Language Model deployment in HR pay equity compliance systems.**
 
